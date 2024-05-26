@@ -9,7 +9,7 @@ import {
 import { Avatar, Card } from "@rneui/themed";
 import { LinearGradient } from "expo-linear-gradient";
 import { useState } from "react";
-import { Button } from "@rneui/base";
+
 
 const styles = StyleSheet.create({
   container: {
@@ -19,8 +19,8 @@ const styles = StyleSheet.create({
   header: {
     flex: 3,
     flexDirection: "column-reverse",
-    backgroundColor: "red",
-    padding: 2,
+    // backgroundColor: "red",
+    // padding: 2,
     //height: "100%",
     //justifyContent: "center",
     //alignItems: "baseline",
@@ -42,6 +42,7 @@ const styles = StyleSheet.create({
   button: {},
   body: {
     flex: 8,
+    padding: 10,
     backgroundColor: "blue",
   },
   cardContainer: {
@@ -49,6 +50,7 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
     alignItems: "center",
     backgroundColor: "yellow",
+    padding: 10,
   },
   card: {
     flex: 1,
@@ -65,15 +67,16 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: "gray",
   },
+  profile_name: {
+    fontSize: 32,
+    color: "black",
+  },
 });
 
 // Set the constants
 
 // Component 02 - DetailsScreen
 export function ProfileLayout() {
-  const [count, setCount] = useState(1);
-  const [name, setName] = useState("Marcelo");
-  const [text, setText] = useState("");
 
   return (
     <View id="main-container" style={styles.container}>
@@ -89,7 +92,7 @@ export function ProfileLayout() {
             titleStyle={{ fontSize: 24 }}
             containerStyle={{ backgroundColor: "gray" }}
           ></Avatar>
-          <Text>Profile Info</Text>
+          <Text style={styles.profile_name}>Profile Info</Text>
         </View>
       </View>
       <View id="body" style={styles.body}>
@@ -107,34 +110,6 @@ export function ProfileLayout() {
             <Text style={styles.card_label}>info</Text>
           </Card>
         </View>
-        <Text style={{ fontSize: 40, color: "white" }}>{count}</Text>
-        <Button onPress={() => setCount(count + 1)}>Count</Button>
-        <Text style={{ fontSize: 40, color: "white" }}>{name}</Text>
-        <Button
-          onPress={() =>
-            setName(
-              name
-                .split("")
-                .sort(function () {
-                  return 0.5 - Math.random();
-                })
-                .join("")
-            )
-          }
-        >
-          Random name
-        </Button>
-        <TextInput
-          style={{
-            height: 40,
-            backgroundColor: "white",
-            borderWidth: 1,
-            margin: 10,
-          }}
-          placeholder="Type your name"
-          value={text}
-          onChangeText={(text) => setText(text.toUpperCase())}
-        />
       </View>
     </View>
   );

@@ -2,8 +2,7 @@ import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { HomeScreen } from "./pages/HomeScreen";
-import { DetailsScreen } from "./pages/DetailsScreen";
-import { ProfileScreen } from "./pages/ProfileScreen";
+import { Lab_1 } from "./pages/lab_1/page";
 import { ProfileLayout } from "./pages/ProfileLayout";
 
 // Stack Navigator: this is the main navigator that will be used to navigate between screens
@@ -14,10 +13,9 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-      <Stack.Screen name="ProfileLayout" component={ProfileLayout} />
-        <Stack.Screen name="Home" component={ProfileScreen} />
-        <Stack.Screen name="Details" component={DetailsScreen} />
-        <Stack.Screen name="Profile" component={HomeScreen} />
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="ProfileLayout" component={ProfileLayout} />
+        <Stack.Screen name="Lab_1" component={Lab_1} />
       </Stack.Navigator>
     </NavigationContainer>
   );
