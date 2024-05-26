@@ -18,7 +18,7 @@ This is a React Native project built with Expo.
 2. **Navigate to the project directory:**
 
    ```bash
-   cd <your-project-name>
+   cd cprg303-assignments
    ```
 
 3. **Install dependencies:**
